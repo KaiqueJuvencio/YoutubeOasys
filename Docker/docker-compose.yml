@@ -1,0 +1,35 @@
+# Use postgres/example user/password credentials
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Postgres2019!"
+    ports:
+      - "15432:5432"
+    volumes:
+      - C:/Users/kaiqu/Documents/youtubeOasys/Docker/postgres/db:/var/lib/postgresql/data 
+    
+      
+    #volumes:
+     # - C:\Users\kaiqu\Documents\youtubeOasys\Docker:/var/lib/postgresql/data 
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:15432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=Postgres2019!
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+          
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Postgres2019!
