@@ -9,12 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @EnableAutoConfiguration
-@ComponentScan ({"com.br.youtubeOasys.api", "com.br.youtubeOasys.domain.repository"})
+@ComponentScan ({"com.br.youtubeOasys.api", "com.br.youtubeOasys.domain.repository", "com.br.youtubeOasys.domain.service"})
 @EnableFeignClients
 public class YoutubeOasysApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(YoutubeOasysApplication.class, args);
 	}
-
 }

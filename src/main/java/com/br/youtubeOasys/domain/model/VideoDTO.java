@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -20,7 +22,11 @@ public class VideoDTO {
 	private String description;
 	private String channelId;
 	private String channelTitle;
-	private String thumbnailUrl;
+	private String thumbnailUrl;	
+	@ManyToOne
+	@JoinColumn
+	private TaskDTO tasks;
+	
 	public long getId() {
 		return id;
 	}
@@ -62,5 +68,11 @@ public class VideoDTO {
 	}
 	public void setThumbnailUrl(String thumbnailUrl) {
 		this.thumbnailUrl = thumbnailUrl;
-	}		
+	}
+	public TaskDTO getTasks() {
+		return tasks;
+	}
+	public void setTasks(TaskDTO tasks) {
+		this.tasks = tasks;
+	}	
 }
