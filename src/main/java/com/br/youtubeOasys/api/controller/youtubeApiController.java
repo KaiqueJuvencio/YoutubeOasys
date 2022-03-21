@@ -14,26 +14,30 @@ import org.springframework.web.bind.annotation.RestController;
 import com.br.youtubeOasys.domain.model.TaskDTO;
 import com.br.youtubeOasys.domain.model.VideoDTO;
 import com.br.youtubeOasys.domain.model.YoutubeApiResponseDTO;
-import com.br.youtubeOasys.domain.service.FeignRequest;
 import com.br.youtubeOasys.domain.service.TaskService;
 import com.br.youtubeOasys.domain.service.VideoService;
+import com.br.youtubeOasys.domain.service.YoutubeApiService;
+
+import javassist.tools.web.BadHttpRequest;
 
 @RestController
 @RequestMapping("/api")
-public class youtubeApiController {
-	
-	@Autowired
-	FeignRequest feignRequest;	
+public class YoutubeApiController {
+		
 	@Autowired
 	TaskService taskService;	
+	
 	@Autowired
 	VideoService videoService;
+	
+	@Autowired
+	YoutubeApiService youtubeApiService;
 
 	@PostMapping("/tasks/{youtubeChannelId}")
 	public ResponseEntity<TaskDTO> createTask(@PathVariable String youtubeChannelId) {
-		ResponseEntity<YoutubeApiResponseDTO> youtubeRequest = feignRequest.request(youtubeChannelId);
+		ResponseEntity<YoutubeApiResponseDTO> youtubeApiResponse = youtubeApiService.callApi(youtubeChannelId);
 		TaskDTO taskCreated = taskService.create(youtubeChannelId);
-		videoService.create(youtubeRequest, taskCreated);												
+		videoService.create(youtubeApiResponse, taskCreated);												
 		return ResponseEntity.ok(taskCreated);
 	}
 
@@ -43,7 +47,7 @@ public class youtubeApiController {
 	}
 
 	@GetMapping("/tasks/{taskId}")
-	public ResponseEntity<List<VideoDTO>> getVideos(@PathVariable Long taskId) {
+	public ResponseEntity<List<VideoDTO>> getVideos(@PathVariable String taskId) throws BadHttpRequest {
 		return ResponseEntity.ok(videoService.findByTaskId(taskId));
 	}
 }
