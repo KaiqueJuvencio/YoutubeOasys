@@ -1,5 +1,7 @@
 package com.br.youtubeOasys.domain.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,9 +16,11 @@ public class TaskService {
 	TaskRepository taskRepository;
 	
 	public ResponseEntity<TaskDTO> create(String youtubeChannelId){
-		TaskDTO task = new TaskDTO();	
-		task.setChannelId(youtubeChannelId);
-		TaskDTO taskCreated = taskRepository.save(task);	
-		return ResponseEntity.ok(taskCreated);
+		TaskDTO task = new TaskDTO(youtubeChannelId);		
+		return ResponseEntity.ok(taskRepository.save(task));		
+	}
+	
+	public ResponseEntity<List<TaskDTO>> finAll(){			
+		return ResponseEntity.ok(taskRepository.findAll());
 	}
 }
