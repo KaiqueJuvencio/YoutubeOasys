@@ -35,4 +35,8 @@ public class VideoService {
 		List<VideoDTO> videosCreated = videoRepository.saveAll(videos);
 		return ResponseEntity.ok(videosCreated);
 	}
+	
+	public List<VideoDTO> findByTaskId(Long taskId){
+		return videoRepository.findByTasksId(taskId);
+	}
 }
