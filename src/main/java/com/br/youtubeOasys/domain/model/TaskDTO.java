@@ -17,6 +17,9 @@ public class TaskDTO {
 	private Long id;	
 	private String channelId;
 	
+	public TaskDTO() {
+	}
+	
 	public TaskDTO(String channelId) {
 		super();
 		this.channelId = channelId;
