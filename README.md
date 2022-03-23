@@ -13,11 +13,11 @@ It's data is based on search feature of Youtube.
 
 Used technologies to build the application
 
-- Java
+- Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign(spring-cloud), Devtools, Maven
 - Postgres
 - Docker
 - Docker Compose
-- Github features (Issue, Pull Requests)
+- Github Features (Issues, Pull Requests)
 
 ## Local Setup
 
@@ -34,6 +34,8 @@ It will run 2 containers:
 
 ## API Endpoints
 
+Before backend build (app) it will avaiable on:
+http://localhost:8080/swagger-ui.html
 
 ##### (POST) /api/tasks/{youtubeChannelId}
 
