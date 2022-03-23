@@ -11,6 +11,12 @@ It's data is based on search feature of Youtube.
 
 ## Tech Stack
 
+<div style="display: inline_block">
+    <img align="center" alt="Java" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+    <img align="center" alt="Postgres" height="50" width="50"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+    <img align="center" alt="Docker" height="70" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
+</div>
+<br>
 Used technologies to build the application
 
 - Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign(spring-cloud), Devtools, Maven
@@ -175,3 +181,8 @@ Response
 ## Author
 
  [<img src="https://github.com/KaiqueJuvencio.png" width="130px;"/><br /><sub>**Kaique Juvencio**</sub>](https://github.com/KaiqueJuvencio)<br /> 
+ 
+ <h2>Reach me out 👇🏼</h2>
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kaiquejuvencio/)](https://www.linkedin.com/in/kaiquejuvencio/) [![Gmail Badge](https://img.shields.io/badge/-kaiquejuvenciocosta@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kaiquejuvenciocosta@gmail.com)](mailto:kaiquejuvenciocosta@gmail.com)
+
