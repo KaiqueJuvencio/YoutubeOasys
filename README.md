@@ -138,6 +138,7 @@ Response
 | thumbnail_url           | varchar(255) | Thumbnail .jpg url     |
 | title                   | varchar(255) | Video title            |
 | tasks_id                |  int         | FK (TB_TASK)           |
+| url                     | varchar(255) | Video url on Youtube   |
 
 ### TB_TASK
 
