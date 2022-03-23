@@ -13,15 +13,15 @@ It's data is based on search feature of Youtube.
 
 Used technologies to build the application
 
-- Java
+- Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign(spring-cloud), Devtools, Maven
 - Postgres
 - Docker
 - Docker Compose
-- Github features (Issue, Pull Requests)
+- Github Features (Issues, Pull Requests)
 
 ## Local Setup
 
-To start the local application, only run the command below on the root
+To start the local application, only run the command below on root
 
 ```bash
 docker-compose up
@@ -34,6 +34,8 @@ It will run 2 containers:
 
 ## API Endpoints
 
+Before backend build (app) it will avaiable on:
+http://localhost:8080/swagger-ui.html
 
 ##### (POST) /api/tasks/{youtubeChannelId}
 
@@ -122,6 +124,29 @@ Response
         }
     }
 ]
+```
+## Exception Handler
+
+##### BadRequestException
+
+Example:
+
+Request
+
+```bash
+Any bad request or error
+```
+
+Response
+
+```json
+{
+    "timestamp": "2022/03/23 - 03:36",
+    "message": "Error to find videos by task id.",
+    "errorCode": 400,
+    "errorType": "BAD_REQUEST",
+    "pathUri": "/api/tasks/cant-have-letters-here"
+}
 ```
 
 ## Database Tables
