@@ -32,6 +32,7 @@ public class VideoService {
 				video.setChannelId(item.getSnippet().getChannelId());
 				video.setThumbnailUrl(item.getSnippet().getThumbnail().getHigh().getUrl());
 				video.setVideoId(item.getId().getVideoId());
+				video.setUrl("https://www.youtube.com/watch?v="+video.getVideoId());
 				videos.add(video);
 				video.setTasks(task);											
 			});	
