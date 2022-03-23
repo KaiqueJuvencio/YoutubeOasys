@@ -1,4 +1,4 @@
-# YoutubeOasys
+#  :film_projector: YoutubeOasys :clapper:
 
 YoutubeOasys is an application that will pull data from some videos that have been uploaded to a YouTube channel.
 It's data is based on search feature of Youtube.
