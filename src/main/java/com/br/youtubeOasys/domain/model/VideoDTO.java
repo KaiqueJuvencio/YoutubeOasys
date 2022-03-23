@@ -23,6 +23,7 @@ public class VideoDTO {
 	private String channelId;
 	private String channelTitle;
 	private String thumbnailUrl;	
+	private String url;
 	@ManyToOne
 	@JoinColumn
 	private TaskDTO tasks;
@@ -68,6 +69,12 @@ public class VideoDTO {
 	}
 	public void setThumbnailUrl(String thumbnailUrl) {
 		this.thumbnailUrl = thumbnailUrl;
+	}	
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public TaskDTO getTasks() {
 		return tasks;
