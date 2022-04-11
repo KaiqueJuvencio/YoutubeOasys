@@ -2,16 +2,10 @@ package com.br.youtubeOasys.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Data;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 public class ThumbnailDTO {
-
 	private HighDTO high;
-
-	public HighDTO getHigh() {
-		return high;
-	}
-
-	public void setHigh(HighDTO high) {
-		this.high = high;
-	}
 }

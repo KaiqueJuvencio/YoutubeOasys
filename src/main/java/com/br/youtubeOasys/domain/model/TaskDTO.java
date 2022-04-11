@@ -8,33 +8,22 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="TB_TASK")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Data
+@NoArgsConstructor
 public class TaskDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;	
 	private String channelId;
 	
-	public TaskDTO() {
-	}
-	
 	public TaskDTO(String channelId) {
 		super();
 		this.channelId = channelId;
-	}
-	
-	public String getChannelId() {
-		return channelId;
-	}
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}			
 }
