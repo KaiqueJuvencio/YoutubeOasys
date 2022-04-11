@@ -19,10 +19,11 @@ It's data is based on search feature of Youtube.
 <br>
 Used technologies to build the application
 
-- Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign(spring-cloud), Devtools, Maven
+- Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign (spring-cloud), Devtools, Maven
 - Postgres
 - Docker
 - Docker Compose
+- Test Containers
 - Github Features (Issues, Pull Requests)
 
 ## Local Setup
