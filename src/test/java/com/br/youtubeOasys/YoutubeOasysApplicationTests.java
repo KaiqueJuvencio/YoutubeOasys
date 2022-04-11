@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -14,7 +15,9 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.br.youtubeOasys.domain.model.TaskDTO;
+import com.br.youtubeOasys.domain.model.YoutubeApiResponseDTO;
 import com.br.youtubeOasys.domain.repository.TaskRepository;
+import com.br.youtubeOasys.domain.service.YoutubeApiService;
 
 @Testcontainers
 @SpringBootTest
@@ -23,6 +26,10 @@ class YoutubeOasysApplicationTests {
 	@Autowired
 	private TaskRepository taskRespository;
 	
+	@Autowired
+	private YoutubeApiService youtubeApiService;
+	
+	@SuppressWarnings({ "deprecation", "rawtypes" })
 	@Container
 	public static PostgreSQLContainer container = new PostgreSQLContainer()
 			.withUsername("postgres")
@@ -42,7 +49,7 @@ class YoutubeOasysApplicationTests {
 	}
 	
 	@Test
-	void testeDataBase() {
+	void testDataBase() {
 		TaskDTO task = new TaskDTO();
 		task.setChannelId("TestContainer");
 		task.setId(1L);
@@ -60,6 +67,13 @@ class YoutubeOasysApplicationTests {
 		Optional<TaskDTO> taskRead = taskRespository.findById(1L);
 		assertEquals(taskRead.get().getChannelId(), "TestContainer");
 		assertEquals(taskRead.get().getId(), 1L);	
-	}		
+	}
+	
+	@Test
+	public void testYoutubeApi() {
+		String youtubeChannelId = "UCX6OQ3DkcsbYNE6H8uQQuVA";
+		ResponseEntity<YoutubeApiResponseDTO> youtubeApiResponse = youtubeApiService.callApi(youtubeChannelId);
+		assertEquals(youtubeApiResponse.getStatusCodeValue(), 200);
+	}
 
 }
