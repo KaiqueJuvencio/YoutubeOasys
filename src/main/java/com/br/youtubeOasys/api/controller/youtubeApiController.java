@@ -25,13 +25,13 @@ import javassist.tools.web.BadHttpRequest;
 public class YoutubeApiController {
 		
 	@Autowired
-	TaskService taskService;	
+	private TaskService taskService;	
 	
 	@Autowired
-	VideoService videoService;
+	private VideoService videoService;
 	
 	@Autowired
-	YoutubeApiService youtubeApiService;
+	private YoutubeApiService youtubeApiService;
 
 	@PostMapping("/tasks/{youtubeChannelId}")
 	public ResponseEntity<TaskDTO> createTask(@PathVariable String youtubeChannelId) {
