@@ -100,7 +100,7 @@ Response
 Request
 
 ```bash
-http://localhost:8080/api/tasks/40
+http://localhost:8080/api/tasks/1
 ```
 
 Response
