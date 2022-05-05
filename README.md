@@ -19,7 +19,7 @@ It's data is based on search feature of Youtube.
 <br>
 Used technologies to build the application
 
-- Java (jdk-11.0.2) | Spring Boot, JPA, Hibernate, Swagger, OpenFeign (spring-cloud), Devtools, Maven (3.8.5), Lombok
+- Java (jdk-11.0.2) | Spring Boot, JPA, Hibernate, Swagger, OpenFeign, Devtools, Maven (3.8.5), Lombok
 - Postgres
 - Docker
 - Docker Compose
@@ -57,8 +57,10 @@ Before backend build (app) it will be avaiable at:
 http://localhost:8080/swagger-ui.html
 
 ### (POST) /api/tasks/{youtubeChannelId}
+This endpoint will call YouTube API according to the youtubeChannelId that the user set, then it will get the most successful videos of this channel and save it in the database.
 
 ### Example:
+Example channel used was MrBeast: https://www.youtube.com/c/MrBeast6000
 
 Request
 
@@ -77,6 +79,7 @@ Response
 #
 
 ### (GET) /api/tasks/
+This endpoint will return all created tasks
 
 ### Example:
 
@@ -103,6 +106,7 @@ Response
 #
 
 ### (GET) /api/tasks/{taskId}
+This endpoint will return the most successful videos of a channel when a specific task was created
 
 ### Example:
 
