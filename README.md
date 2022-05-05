@@ -153,13 +153,14 @@ Response
 ## :x: Exception Handler
 
 ### BadRequestException
+Any bad request or error
 
 ### Example:
-
+If using letters rather id
 Request
 
 ```bash
-Any bad request or error
+http://localhost:8080/api/tasks/letsrock
 ```
 
 Response
