@@ -175,6 +175,13 @@ Response
 }
 ```
 
+## Test Container
+It will up the container and test the database.
+You can run it on:
+```bash
+/youtubeOasys/src/test/java/com/br/youtubeOasys/YoutubeOasysApplicationTests.java
+```
+
 ## 📊 Database Tables
 
 
