@@ -19,7 +19,7 @@ It's data is based on search feature of Youtube.
 <br>
 Used technologies to build the application
 
-- Java (jdk-11.0.2) | Spring Boot, JPA, Hibernate, Swagger, OpenFeign, Devtools, Maven (3.8.5), Lombok
+- Java (jdk-11.0.2) | Spring Boot, JPA, Hibernate, JUnit, Swagger, OpenFeign (Spring Cloud), Devtools, Maven (3.8.5), Lombok
 - Postgres
 - Docker
 - Docker Compose
@@ -177,7 +177,7 @@ Response
 
 ## Test Container
 It will up the container and test the database.
-You can run it on:
+You can run it with JUnit on:
 ```bash
 /youtubeOasys/src/test/java/com/br/youtubeOasys/YoutubeOasysApplicationTests.java
 ```
