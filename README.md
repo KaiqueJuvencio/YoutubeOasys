@@ -19,7 +19,7 @@ It's data is based on search feature of Youtube.
 <br>
 Used technologies to build the application
 
-- Java | Spring Boot, JPA, Hibernate, Swagger, OpenFeign (spring-cloud), Devtools, Maven, Lombok
+- Java (jdk-11.0.2) | Spring Boot, JPA, Hibernate, Swagger, OpenFeign (spring-cloud), Devtools, Maven (3.8.5), Lombok
 - Postgres
 - Docker
 - Docker Compose
@@ -31,10 +31,19 @@ How to install Lombok for your IDE avaiable at: https://projectlombok.org/setup/
 
 ## Local Setup
 
-To start the local application, only run the command below on project root
+To start the local application, run the commands below on project root:
 
+1º:
 ```bash
-docker-compose up
+mvn clean install
+```
+2º:
+```bash
+docker-compose build --no-cache
+```
+3º
+```bash
+docker-compose up --force-recreate
 ```
 
 It will run 2 containers: 
@@ -108,28 +117,30 @@ Response
 ```json
 [
     {
-        "id": 64,
+        "id": 1,
         "videoId": "0e3GPea1Tyg",
         "title": "$456,000 Squid Game In Real Life!",
         "description": "MAKE SURE YOU WATCH UNTIL GLASS BRIDGE IT'S INSANE! Download Brawl Stars now and get a free gift from me in the ...",
         "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
         "channelTitle": "MrBeast",
         "thumbnailUrl": "https://i.ytimg.com/vi/0e3GPea1Tyg/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=0e3GPea1Tyg",
         "tasks": {
-            "id": 40,
+            "id": 1,
             "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA"
         }
     },
     {
-        "id": 65,
+        "id": 2,
         "videoId": "r7zJ8srwwjk",
         "title": "I Spent 50 Hours In Solitary Confinement",
         "description": "i borderline went crazy about 30 hours in... New Merch - https://shopmrbeast.com/ SUBSCRIBE OR I TAKE YOUR DOG ...",
         "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
         "channelTitle": "MrBeast",
         "thumbnailUrl": "https://i.ytimg.com/vi/r7zJ8srwwjk/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=r7zJ8srwwjk",
         "tasks": {
-            "id": 40,
+            "id": 1,
             "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA"
         }
     }
